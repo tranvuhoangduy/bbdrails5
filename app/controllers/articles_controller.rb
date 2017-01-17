@@ -20,6 +20,14 @@ def show
   @article = Article.find(params[:id])
 end
 
+protected
+
+def resource_not_found
+  message = "The article you looking for could not be found"
+  flash[:alert] = message
+  redirect_to root_path
+end
+
 
 private 
 

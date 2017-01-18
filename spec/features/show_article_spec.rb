@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.feature "Showing an article" do
    before do
     john = User.create(email: "john@example.com", password: "password")
-    login_as(john)
     @article = Article.create(title:'The first article' , body:'lorem ipslum' , user: john)
    end
 

@@ -8,11 +8,11 @@ before do
 end
 
 describe 'GET /articles/:id' do 
-context 'with existing article' do
-before { get "/articles/#{@article.id}" }
-it "handles existing article" do 
-expect(response.status).to eq 200
-end 
+ context 'with existing article' do
+    before { get "/articles/#{@article.id}" }
+   it "handles existing article" do 
+     expect(response.status).to eq 200
+   end 
 end
 context 'with non-existing article' do 
    before { get "/articles/xxxxx" }
@@ -27,7 +27,7 @@ context 'with non-existing article' do
       before { get "/articles/#{@article.id}/edit" }
      it "redirects to the signin page" do 
        expect(response.status).to eq 302
-       flash_message = "You need to sign in or sign up before continuing"
+       flash_message = "You need to sign in or sign up before continuing."
        expect(flash[:alert]).to eq flash_message
      end 
  end
